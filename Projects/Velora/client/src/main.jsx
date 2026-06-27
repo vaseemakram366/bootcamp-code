@@ -8,9 +8,13 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );

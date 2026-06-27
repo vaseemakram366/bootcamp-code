@@ -1,48 +1,28 @@
-import { Link } from "react-router-dom";
-import {
-    FaSearch,
-    FaHeart,
-    FaShoppingCart,
-    FaUserCircle,
-} from "react-icons/fa";
-import { APP_NAME } from "../constants/theme";
+import Logo from "./common/Logo";
+import SearchBar from "./layout/SearchBar";
+import NavLinks from "./layout/NavLinks";
+import NavbarActions from "./layout/NavbarActions";
+import MobileMenu from "./layout/MobileMenu";
 
 function Navbar() {
     return (
-        <nav className="bg-black text-white px-10 py-4 flex items-center justify-between sticky top-0 z-50 shadow-md">
-            {/* Logo */}
-            <Link to="/" className="text-3xl font-bold">
-                {APP_NAME}
-            </Link>
+        <header className="sticky top-0 z-50 bg-white shadow-md">
 
-            {/* Search */}
-            <div className="flex items-center bg-white rounded-xl overflow-hidden w-[420px]">
-                <input
-                    type="text"
-                    placeholder="Search products..."
-                    className="w-full px-4 py-3 text-black outline-none"
-                />
+            <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-                <button className="bg-yellow-400 px-5 py-3">
-                    <FaSearch className="text-black" />
-                </button>
-            </div>
+                <Logo />
 
-            {/* Right Side */}
-            <div className="flex items-center gap-6 text-2xl">
-                <Link to="/wishlist">
-                    <FaHeart />
-                </Link>
+                <NavLinks />
 
-                <Link to="/cart">
-                    <FaShoppingCart />
-                </Link>
+                <SearchBar />
 
-                <Link to="/profile">
-                    <FaUserCircle />
-                </Link>
-            </div>
-        </nav>
+                <NavbarActions />
+
+                <MobileMenu />
+
+            </nav>
+
+        </header>
     );
 }
 
